@@ -1,0 +1,30 @@
+// Flora-2 version of the evaluation-01 ontology, based on the OOM formalism
+
+// subPropertyOf rule
+obj[Q -> Val] :- subPropertyOf(P,Q) \and obj[P -> Val] .
+
+// declare Thing
+obj:Thing :- obj:Type .
+
+
+// Ontology
+Asset::Some(author, Thing) .
+Asset::AtMost(1, author, Thing) .
+Report::Asset .
+subPropertyOf(author, editor) .
+subPropertyOf(lastEditor, editor) .
+Report::Some(documents, Occurrence) .
+Report::AtMost(1, documents, Occurrence) .
+Occurrence::Some(has-severity, Severity) .
+Occurrence::AtMost(1, has-severity, Severity) .
+observation:Severity .
+incident:Severity .
+accident:Severity .
+Severity::Nom(observation, incident, accident) .
+
+
+// Integrity constraints
+Report[author{1..1} => User] .
+Report[lastEditor{0..1} => User] .
+Report[documents{1..1} => Occurrence] .
+Occurrence[has-severity{1..1} => Severity] .

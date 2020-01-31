@@ -29,9 +29,9 @@ for the two example ontologies.
 
 The models can be generated using:
 
-`cz.cvut.kbss.jopa:jopa-maven-plugin:0.13.3:owl2java-transform -P evaluation-01`
+`mvn cz.cvut.kbss.jopa:jopa-maven-plugin:owl2java-transform -P evaluation-01`
 
 or
 
-`cz.cvut.kbss.jopa:jopa-maven-plugin:0.13.3:owl2java-transform -P evaluation-02`
+`mvn cz.cvut.kbss.jopa:jopa-maven-plugin:owl2java-transform -P evaluation-02`
 

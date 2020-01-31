@@ -1,0 +1,20 @@
+// Flora-2 version of the evaluation-02 ontology, based on the OOM formalism
+
+// subPropertyOf rule
+obj[Q -> Val] :- subPropertyOf(P,Q) \and obj[P -> Val] .
+
+// declare Thing
+obj:Thing :- obj:Type .
+
+// Ontology
+SafetyEvent::Event .
+SecurityEvent::SafetyEvent .
+UnlawfulAction::(SafetyEvent and Action) .
+UnlawfulAction::Some(has-punishment, Punishment) .
+BombThreat::(SecurityEvent and UnlawfulAction) .
+GroundObject::Not(AirborneObject) .
+BombThreat::Some(against, GroundObject or AirborneObject) .
+
+Integrity Constraints
+UnlawfulAction[has-punishment{1..*} => Punishment] .
+BombThreat[against{1..*} => GroundObject or AirborneObject] .
