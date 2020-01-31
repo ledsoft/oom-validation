@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01#"
+     xml:base="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01"
+     xmlns:ic="http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#isIntegrityConstraintFor -->
+
+    <owl:AnnotationProperty rdf:about="http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#isIntegrityConstraintFor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author">
+        <rdfs:subPropertyOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/has-severity -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/has-severity"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor">
+        <rdfs:subPropertyOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Asset -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Asset">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/has-severity"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/has-severity"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/has-severity"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/has-severity"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report">
+        <rdfs:subClassOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Asset"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/accident"/>
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/incident"/>
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/observation"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/accident -->
+
+    <owl:NamedIndividual rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/accident">
+        <rdf:type rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/incident -->
+
+    <owl:NamedIndividual rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/incident">
+        <rdf:type rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/observation -->
+
+    <owl:NamedIndividual rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/observation">
+        <rdf:type rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
