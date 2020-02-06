@@ -1,0 +1,181 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/>
+
+
+# Report
+ASK WHERE {
+	?x a onto:Report .
+	FILTER NOT EXISTS {
+		?x onto:author ?y .
+		?y a onto:User .
+	}
+}
+
+ASK WHERE {
+	?x a onto:Report .
+    ?x onto:author ?yOne .
+    ?x onto:author ?yTwo .
+    ?yOne a onto:User .
+    ?yTwo a onto:User .
+    FILTER ((?yOne != ?yTwo) && NOT EXISTS {
+        ?yOne owl:sameAs ?yTwo .
+    })
+}
+
+ASK WHERE {
+    ?x a onto:Report .
+    ?x onto:author ?y .
+    FILTER NOT EXISTS {
+        ?y a onto:User .
+    }
+}
+
+ASK WHERE {
+	?x a onto:Report .
+    ?x onto:lastEditor ?yOne .
+    ?x onto:lastEditor ?yTwo .
+    ?yOne a onto:User .
+    ?yTwo a onto:User .
+    FILTER ((?yOne != ?yTwo) && NOT EXISTS {
+        ?yOne owl:sameAs ?yTwo .
+    })
+}
+
+ASK WHERE {
+    ?x a onto:Report .
+    ?x onto:lastEditor ?y .
+    FILTER NOT EXISTS {
+        ?y a onto:User .
+    }
+}
+
+ASK WHERE {
+	?x a onto:Report .
+	FILTER NOT EXISTS {
+		?x onto:documents ?y .
+		?y a onto:Occurrence .
+	}
+}
+
+ASK WHERE {
+	?x a onto:Report .
+    ?x onto:documents ?yOne .
+    ?x onto:documents ?yTwo .
+    ?yOne a onto:Occurrence .
+    ?yTwo a onto:Occurrence .
+    FILTER ((?yOne != ?yTwo) && NOT EXISTS {
+        ?yOne owl:sameAs ?yTwo .
+    })
+}
+
+ASK WHERE {
+    ?x a onto:Report .
+    ?x onto:documents ?y .
+    FILTER NOT EXISTS {
+        ?y a onto:Occurrence .
+    }
+}
+
+
+# Occurrence
+ASK WHERE {
+	?x a onto:Occurrence .
+	FILTER NOT EXISTS {
+		?x onto:has-severity ?y .
+		?y a onto:Severity .
+	}
+}
+
+ASK WHERE {
+	?x a onto:Occurrence .
+    ?x onto:has-severity ?yOne .
+    ?x onto:has-severity ?yTwo .
+    ?yOne a onto:Severity .
+    ?yTwo a onto:Severity .
+    FILTER ((?yOne != ?yTwo) && NOT EXISTS {
+        ?yOne owl:sameAs ?yTwo .
+    })
+}
+
+ASK WHERE {
+    ?x a onto:Occurrence .
+    ?x onto:has-severity ?y .
+    FILTER NOT EXISTS {
+        ?y a onto:Severity .
+    }
+}
+
+
+# User
+ASK WHERE {
+	?x a onto:User .
+	FILTER NOT EXISTS {
+		?x onto:firstName ?y .
+		FILTER (datatype(?y) = xsd:string)
+	}
+}
+
+ASK WHERE {
+	?x a onto:User .
+    ?x onto:firstName ?yOne .
+    ?x onto:firstName ?yTwo .
+    FILTER (datatype(?yOne) = xsd:string)
+    FILTER (datatype(?yTwo) = xsd:string)
+    FILTER (?yOne != ?yTwo)
+}
+
+ASK WHERE {
+    ?x a onto:User .
+    ?x onto:firstName ?y .
+    FILTER (datatype(?y) != xsd:string)
+}
+
+ASK WHERE {
+	?x a onto:User .
+	FILTER NOT EXISTS {
+		?x onto:lastName ?y .
+		FILTER (datatype(?y) = xsd:string)
+	}
+}
+
+ASK WHERE {
+	?x a onto:User .
+    ?x onto:lastName ?yOne .
+    ?x onto:lastName ?yTwo .
+    FILTER (datatype(?yOne) = xsd:string)
+    FILTER (datatype(?yTwo) = xsd:string)
+    FILTER (?yOne != ?yTwo)
+}
+
+ASK WHERE {
+    ?x a onto:User .
+    ?x onto:lastName ?y .
+    FILTER (datatype(?y) != xsd:string)
+}
+
+
+ASK WHERE {
+	?x a onto:User .
+	FILTER NOT EXISTS {
+		?x onto:username ?y .
+		FILTER (datatype(?y) = xsd:string)
+	}
+}
+
+ASK WHERE {
+	?x a onto:User .
+    ?x onto:username ?yOne .
+    ?x onto:username ?yTwo .
+    FILTER (datatype(?yOne) = xsd:string)
+    FILTER (datatype(?yTwo) = xsd:string)
+    FILTER (?yOne != ?yTwo)
+}
+
+ASK WHERE {
+    ?x a onto:User .
+    ?x onto:username ?y .
+    FILTER (datatype(?y) != xsd:string)
+}
