@@ -15,8 +15,8 @@ subPropertyOf(author, editor) .
 subPropertyOf(lastEditor, editor) .
 Report::Some(documents, Occurrence) .
 Report::AtMost(1, documents, Occurrence) .
-Occurrence::Some(has-severity, Severity) .
-Occurrence::AtMost(1, has-severity, Severity) .
+Occurrence::Some(hasSeverity, Severity) .
+Occurrence::AtMost(1, hasSeverity, Severity) .
 observation:Severity .
 incident:Severity .
 accident:Severity .
@@ -27,4 +27,4 @@ Severity::Nom(observation, incident, accident) .
 Report[author{1..1} => User] .
 Report[lastEditor{0..1} => User] .
 Report[documents{1..1} => Occurrence] .
-Occurrence[has-severity{1..1} => Severity] .
+Occurrence[hasSeverity{1..1} => Severity] .
