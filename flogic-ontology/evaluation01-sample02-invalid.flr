@@ -1,0 +1,4 @@
+occurrence01:Occurrence .
+
+report01:Report .
+report01[ documents -> occurrence01 ].

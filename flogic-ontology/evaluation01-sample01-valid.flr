@@ -1,0 +1,36 @@
+tom:User .
+tom[
+    firstName -> "Thomas",
+    lastName -> "Lasky",
+    username -> "lasky@unsc.org"
+].
+
+sarah:User .
+sarah[
+    firstName -> "Sarah",
+    lastName -> "Palmer",
+    username -> "palmer@unsc.org"
+].
+
+occurrence01:Occurrence .
+occurrence01[
+    hasSeverity -> observation
+].
+
+report01:Report .
+report01[
+    author -> tom,
+    documents -> occurrence01
+].
+
+occurrence02:Occurrence .
+occurrence02[
+    hasSeverity -> accident
+].
+
+report02:Report .
+report02[
+    author -> tom,
+    lastEditor -> sarah,
+    documents -> occurrence02
+].
