@@ -21,10 +21,16 @@ observation:Severity .
 incident:Severity .
 accident:Severity .
 Severity::Nom(observation, incident, accident) .
+User::All(firstName, _string) .
+User::All(lastName, _string) .
+User::All(username, _string) .
 
 
 // Integrity constraints
-Report[author{1..1} => User] .
-Report[lastEditor{0..1} => User] .
-Report[documents{1..1} => Occurrence] .
+Report[author{1..1} => User,
+        lastEditor{0..1} => User,
+        documents{1..1} => Occurrence] .
 Occurrence[hasSeverity{1..1} => Severity] .
+User[firstName{1..1} => _string,
+        lastName{1..1} => _string,
+        username{1..1} => _string].
