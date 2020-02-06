@@ -18,3 +18,5 @@ BombThreat::Some(against, GroundObject ; AirborneObject) .
 //Integrity Constraints
 UnlawfulAction[hasPunishment{1..*} => Punishment] .
 BombThreat[against{1..*} => (GroundObject ; AirborneObject)] .
+BombThreat::(SecurityEvent , UnlawfulAction) .
+GroundObject::Not(AirborneObject) .

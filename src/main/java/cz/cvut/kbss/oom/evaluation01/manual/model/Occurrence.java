@@ -1,11 +1,13 @@
 package cz.cvut.kbss.oom.evaluation01.manual.model;
 
-import cz.cvut.kbss.jopa.model.annotations.*;
+import cz.cvut.kbss.jopa.model.annotations.Id;
+import cz.cvut.kbss.jopa.model.annotations.OWLClass;
+import cz.cvut.kbss.jopa.model.annotations.OWLObjectProperty;
+import cz.cvut.kbss.jopa.model.annotations.ParticipationConstraints;
 
 import java.io.Serializable;
 import java.net.URI;
 
-@Namespace(prefix = "ev", namespace = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/")
 @OWLClass(iri = "ev:Occurrence")
 public class Occurrence implements Serializable {
 
