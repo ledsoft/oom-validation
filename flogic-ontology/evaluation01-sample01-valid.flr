@@ -1,15 +1,17 @@
+// Data sample for evaluation01, with data corresponding to ICs
+
 tom:User .
 tom[
-    firstName -> "Thomas",
-    lastName -> "Lasky",
-    username -> "lasky@unsc.org"
+    firstName -> 'Thomas':_string,
+    lastName -> 'Lasky':_string,
+    username -> 'lasky@unsc.org':_string
 ].
 
 sarah:User .
 sarah[
-    firstName -> "Sarah",
-    lastName -> "Palmer",
-    username -> "palmer@unsc.org"
+    firstName -> 'Sarah':_string,
+    lastName -> 'Palmer':_string,
+    username -> 'palmer@unsc.org':_string
 ].
 
 occurrence01:Occurrence .

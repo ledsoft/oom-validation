@@ -1,0 +1,32 @@
+// Validation queries for evaluation01 samples
+// Report
+?- ?X:Report \and \naf(?X[author -> ?Y] \and ?Y:User) .
+?- ?X:Report \and ?X[author -> {?Y1, ?Y2}] \and ?Y1:User \and ?Y2:User, \naf(?Y1 :=: ?Y2) .
+?- ?X:Report \and ?X[author -> ?Y] \and \naf(?Y:User) .
+
+?- ?X:Report \and ?X[lastEditor -> {?Y1, ?Y2}] \and ?Y1:User \and ?Y2:User \and \naf(?Y1 :=: ?Y2) .
+?- ?X:Report \and ?X[lastEditor -> ?Y] \and \naf(?Y:User) .
+
+?- ?X:Report \and \naf(?X[documents -> ?Y] \and ?Y:Occurrence) .
+?- ?X:Report \and ?X[documents -> {?Y1, ?Y2}] \and ?Y1:Occurrence \and ?Y2:Occurrence \and \naf(?Y1 :=: ?Y2) .
+?- ?X:Report \and ?X[documents -> ?Y] \and \naf(?Y:Occurrence) .
+
+
+// Occurrence
+?- ?X:Occurrence \and \naf(?X[hasSeverity -> ?Y] \and ?Y:Severity) .
+?- ?X:Occurrence \and ?X[hasSeverity -> {?Y1, ?Y2}] \and ?Y1:Severity \and ?Y2:Severity \and \naf(?Y1 :=: ?Y2) .
+?- ?X:Occurrence \and ?X[hasSeverity -> ?Y] \and \naf(?Y:Severity) .
+
+
+// User
+?- ?X:User \and \naf(?X[firstName -> ?Y] \and ?Y:_string) .
+?- ?X:User \and ?X[firstName -> {?Y1, ?Y2}] \and ?Y1:_string \and ?Y2:_string \and \naf(?Y1 :=: ?Y2) .
+?- ?X:User \and ?X[firstName -> ?Y] \and \naf(?Y:_string) .
+
+?- ?X:User \and \naf(?X[lastName -> ?Y] \and ?Y:_string) .
+?- ?X:User \and ?X[lastName -> {?Y1, ?Y2}] \and ?Y1:_string \and ?Y2:_string \and \naf(?Y1 :=: ?Y2) .
+?- ?X:User \and ?X[lastName -> ?Y] \and \naf(?Y:_string) .
+
+?- ?X:User \and \naf(?X[username -> ?Y] \and ?Y:_string) .
+?- ?X:User \and ?X[username -> {?Y1, ?Y2}] \and ?Y1:_string \and ?Y2:_string \and \naf(?Y1 :=: ?Y2) .
+?- ?X:User \and ?X[username -> ?Y] \and \naf(?Y:_string) .
