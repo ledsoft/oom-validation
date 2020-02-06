@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02#"
+     xml:base="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02"
+     xmlns:ic="http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#isIntegrityConstraintFor -->
+
+    <owl:AnnotationProperty rdf:about="http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#isIntegrityConstraintFor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/against -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/against"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Action -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Action"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/BombThreat -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/BombThreat">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SecurityEvent"/>
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/UnlawfulAction"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/against"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject"/>
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/GroundObject"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/against"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject"/>
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/GroundObject"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/BombThreat"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/against"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject"/>
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/GroundObject"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-02</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/BombThreat"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SecurityEvent"/>
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/UnlawfulAction"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-02</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/BombThreat"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/against"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject"/>
+                            <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/GroundObject"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-02</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Event -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Event"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/GroundObject -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/GroundObject">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject"/>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/GroundObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/AirborneObject"/>
+            </owl:Class>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-02</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SafetyEvent -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SafetyEvent">
+        <rdfs:subClassOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SecurityEvent -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SecurityEvent">
+        <rdfs:subClassOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SafetyEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/UnlawfulAction -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/UnlawfulAction">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Action"/>
+                    <rdf:Description rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/SafetyEvent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:someValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/UnlawfulAction"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:someValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-02</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/UnlawfulAction"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-02</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
