@@ -30,10 +30,14 @@ public class PersistenceFactory {
         LOG.info("Initializing connection to ontology <{}> in file {}.", ontologyIri, ontologyFile);
         final Map<String, String> props = new HashMap<>();
         // Here we set up basic storage access properties - driver class, physical location of the storage
-        props.put(JOPAPersistenceProperties.ONTOLOGY_PHYSICAL_URI_KEY, ontologyFile);
+        final File ontoFile = new File(ontologyFile);
+        assert ontoFile.exists();
+        props.put(JOPAPersistenceProperties.ONTOLOGY_PHYSICAL_URI_KEY, "file://" + ontoFile.getAbsolutePath());
         props.put(JOPAPersistenceProperties.ONTOLOGY_URI_KEY, ontologyIri);
         props.put(JOPAPersistenceProperties.DATA_SOURCE_CLASS, OwlapiDataSource.class.getName());
-        props.put(OwlapiOntoDriverProperties.MAPPING_FILE_LOCATION, "dl-ontology" + File.separator + "mapping");
+        final File mappingFile = new File("dl-ontology" + File.separator + "mapping");
+        assert mappingFile.exists();
+        props.put(OwlapiOntoDriverProperties.MAPPING_FILE_LOCATION, "file://" + mappingFile.getAbsolutePath());
         // View transactional changes during transaction
         props.put(OntoDriverProperties.USE_TRANSACTIONAL_ONTOLOGY, Boolean.TRUE.toString());
         // Ontology language

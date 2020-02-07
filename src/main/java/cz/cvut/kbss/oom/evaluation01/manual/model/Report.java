@@ -4,7 +4,6 @@ import cz.cvut.kbss.jopa.model.annotations.*;
 
 import java.io.Serializable;
 
-@Namespace(prefix = "ev", namespace = "http://example.org/evaluation-01/")
 @OWLClass(iri = "ev:Report")
 public class Report implements Serializable {
 

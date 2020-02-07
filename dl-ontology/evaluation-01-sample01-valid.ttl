@@ -44,7 +44,7 @@
 :sarah rdf:type owl:NamedIndividual ,
                 <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User> ;
        <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName> "Sarah"^^xsd:string ;
-       <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName> "Palmer"^^xsd:string ,
+       <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName> "Palmer"^^xsd:string ;
        <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/username> "palmer@unsc.org"^^xsd:string .
 
 

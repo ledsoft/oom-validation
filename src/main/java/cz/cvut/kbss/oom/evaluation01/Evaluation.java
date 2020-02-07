@@ -29,9 +29,11 @@ public class Evaluation {
             final EntityManager em = factory.createEntityManager();
             final List<Report> manualReports = em.createNativeQuery("SELECT ?r WHERE {?r a ?report .}", Report.class).setParameter("report",
                     URI.create(Vocabulary.s_c_Report)).getResultList();
+            manualReports.forEach(em::detach);
             final List<cz.cvut.kbss.oom.evaluation01.generated.model.Report> generatedReports = em.createNativeQuery("SELECT ?r WHERE {?r a ?report .}",
                     cz.cvut.kbss.oom.evaluation01.generated.model.Report.class).setParameter("report",
                     URI.create(Vocabulary.s_c_Report)).getResultList();
+            generatedReports.forEach(em::detach);
             assertEquals(manualReports.size(), generatedReports.size());
             manualReports.sort(Comparator.comparing(Report::getId));
             generatedReports.sort(Comparator.comparing(cz.cvut.kbss.oom.evaluation01.generated.model.Report::getId));

@@ -9,6 +9,18 @@
         </encoder>
     </appender>
 
+    <logger name="org.apache" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="org.eclipse" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="org.semanticweb" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
     <logger name="cz.cvut.kbss.jopa" level="INFO" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
