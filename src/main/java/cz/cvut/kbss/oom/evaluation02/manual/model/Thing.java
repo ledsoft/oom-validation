@@ -10,13 +10,13 @@ import java.net.URI;
 public class Thing {
 
     @Id
-    private URI id;
+    private String id;
 
-    public URI getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(URI id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

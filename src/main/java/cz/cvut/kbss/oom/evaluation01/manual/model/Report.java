@@ -1,18 +1,15 @@
 package cz.cvut.kbss.oom.evaluation01.manual.model;
 
-import cz.cvut.kbss.jopa.model.annotations.Id;
-import cz.cvut.kbss.jopa.model.annotations.OWLClass;
-import cz.cvut.kbss.jopa.model.annotations.OWLObjectProperty;
-import cz.cvut.kbss.jopa.model.annotations.ParticipationConstraints;
+import cz.cvut.kbss.jopa.model.annotations.*;
 
 import java.io.Serializable;
-import java.net.URI;
 
+@Namespace(prefix = "ev", namespace = "http://example.org/evaluation-01/")
 @OWLClass(iri = "ev:Report")
 public class Report implements Serializable {
 
     @Id
-    private URI id;
+    private String id;
 
     @ParticipationConstraints(nonEmpty = true)
     @OWLObjectProperty(iri = "ev:documents")
@@ -26,11 +23,11 @@ public class Report implements Serializable {
     @OWLObjectProperty(iri = "ev:lastEditor")
     private User lastEditor;
 
-    public URI getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(URI id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -6,23 +6,22 @@ import cz.cvut.kbss.jopa.model.annotations.OWLObjectProperty;
 import cz.cvut.kbss.jopa.model.annotations.ParticipationConstraints;
 
 import java.io.Serializable;
-import java.net.URI;
 
 @OWLClass(iri = "ev:Occurrence")
 public class Occurrence implements Serializable {
 
     @Id
-    private URI id;
+    private String id;
 
     @ParticipationConstraints(nonEmpty = true)
     @OWLObjectProperty(iri = "ev:hasSeverity")
     private Severity hasSeverity;
 
-    public URI getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(URI id) {
+    public void setId(String id) {
         this.id = id;
     }
 

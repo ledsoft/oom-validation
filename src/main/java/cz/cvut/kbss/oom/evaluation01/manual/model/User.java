@@ -6,13 +6,12 @@ import cz.cvut.kbss.jopa.model.annotations.OWLDataProperty;
 import cz.cvut.kbss.jopa.model.annotations.ParticipationConstraints;
 
 import java.io.Serializable;
-import java.net.URI;
 
 @OWLClass(iri = "ev:User")
 public class User implements Serializable {
 
     @Id
-    private URI id;
+    private String id;
 
     @ParticipationConstraints(nonEmpty = true)
     @OWLDataProperty(iri = "ev:firstName")
@@ -26,11 +25,11 @@ public class User implements Serializable {
     @OWLDataProperty(iri = "ev:username")
     private String username;
 
-    public URI getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(URI id) {
+    public void setId(String id) {
         this.id = id;
     }
 
