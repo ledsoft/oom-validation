@@ -84,15 +84,15 @@ ASK WHERE {
 ASK WHERE {
 	?x a onto:Occurrence .
 	FILTER NOT EXISTS {
-		?x onto:has-severity ?y .
+		?x onto:hasSeverity ?y .
 		?y a onto:Severity .
 	}
 }
 
 ASK WHERE {
 	?x a onto:Occurrence .
-    ?x onto:has-severity ?yOne .
-    ?x onto:has-severity ?yTwo .
+    ?x onto:hasSeverity ?yOne .
+    ?x onto:hasSeverity ?yTwo .
     ?yOne a onto:Severity .
     ?yTwo a onto:Severity .
     FILTER ((?yOne != ?yTwo) && NOT EXISTS {
@@ -102,7 +102,7 @@ ASK WHERE {
 
 ASK WHERE {
     ?x a onto:Occurrence .
-    ?x onto:has-severity ?y .
+    ?x onto:hasSeverity ?y .
     FILTER NOT EXISTS {
         ?y a onto:Severity .
     }

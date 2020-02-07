@@ -35,11 +35,11 @@ public class Occurrence
     protected Set<String> types;
     @Properties
     protected Map<String, Set<String>> properties;
-    @OWLObjectProperty(iri = Vocabulary.s_p_has_severity)
+    @OWLObjectProperty(iri = Vocabulary.s_p_hasSeverity)
     @ParticipationConstraints({
         @ParticipationConstraint(owlObjectIRI = Vocabulary.s_c_Severity, min = 1, max = 1)
     })
-    protected Severity has_severity;
+    protected Severity hasSeverity;
 
     public void setId(String id) {
         this.id = id;
@@ -86,12 +86,12 @@ public class Occurrence
         return ((((("Occurrence {"+ name)+"<")+ id)+">")+"}");
     }
 
-    public void setHas_severity(Severity has_severity) {
-        this.has_severity = has_severity;
+    public void setHasSeverity(Severity hasSeverity) {
+        this.hasSeverity = hasSeverity;
     }
 
-    public Severity getHas_severity() {
-        return has_severity;
+    public Severity getHasSeverity() {
+        return hasSeverity;
     }
 
 }

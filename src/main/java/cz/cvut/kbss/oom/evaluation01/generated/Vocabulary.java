@@ -18,7 +18,7 @@ public class Vocabulary {
     public final static String s_c_User = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User";
     public final static String s_p_author = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author";
     public final static String s_p_documents = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents";
-    public final static String s_p_has_severity = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/has-severity";
+    public final static String s_p_hasSeverity = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasSeverity";
     public final static String s_p_lastEditor = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor";
     public final static String s_p_firstName = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName";
     public final static String s_p_lastName = "http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName";
