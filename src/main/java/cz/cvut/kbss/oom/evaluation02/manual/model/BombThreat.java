@@ -9,8 +9,8 @@ import java.util.Set;
 @OWLClass(iri = "ev:BombThreat")
 public interface BombThreat extends SecurityEvent, UnlawfulAction {
 
-    @ParticipationConstraints(nonEmpty = true)
-    @OWLObjectProperty(iri = "ev:against")
+//    @ParticipationConstraints(nonEmpty = true)
+//    @OWLObjectProperty(iri = "ev:against")
     Set<Thing> getTargets();
 
     void setTargets(Set<Thing> targets);

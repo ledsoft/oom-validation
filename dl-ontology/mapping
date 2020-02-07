@@ -1,2 +1,4 @@
 http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01 > ./evaluation-01.owl
 http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02 > ./evaluation-02.owl
+http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid > ./evaluation-01-sample01-valid.ttl
+http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample02-invalid > ./evaluation-01-sample02-invalid.ttl

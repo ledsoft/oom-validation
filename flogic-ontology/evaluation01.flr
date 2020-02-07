@@ -17,7 +17,7 @@ Report::Some(documents, Occurrence) .
 Report::AtMost(1, documents, Occurrence) .
 Occurrence::Some(hasSeverity, Severity) .
 Occurrence::AtMost(1, hasSeverity, Severity) .
-Severity::Nom(observation, incident, accident) .
+Severity :=: Nom(observation, incident, accident) .
 User::All(firstName, _string) .
 User::All(lastName, _string) .
 User::All(username, _string) .
