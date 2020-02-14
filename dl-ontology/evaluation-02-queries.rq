@@ -1,0 +1,65 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/>
+
+
+# UnlawfulAction
+ASK WHERE {
+	?x a onto:UnlawfulAction .
+	FILTER NOT EXISTS {
+		?x onto:hasPunishment ?y .
+		?y a onto:Punishment .
+	}
+}
+
+ASK WHERE {
+    ?x a onto:UnlawfulAction .
+    ?x onto:hasPunishment ?y .
+    FILTER NOT EXISTS {
+        ?y a onto:Punishment .
+    }
+}
+
+
+# GroundObject
+ASK WHERE {
+    ?x a onto:GroundObject .
+    ?x a onto:AirborneObject .
+}
+
+
+#BombThreat
+#TODO This doesn't seem to work
+ASK WHERE {
+    ?x a onto:BombThreat .
+    FILTER NOT EXISTS {
+        ?x a onto:SecurityEvent .
+        ?x a onto:UnlawfulAction .
+    }
+}
+
+ASK WHERE {
+	?x a onto:BombThreat .
+	FILTER NOT EXISTS {
+		?x onto:against ?y .
+		{
+		    ?y a onto:GroundObject .
+		} UNION {
+		    ?y a onto:AirborneObject .
+		}
+	}
+}
+
+ASK WHERE {
+    ?x a onto:BombThreat .
+    ?x onto:against ?y .
+    FILTER NOT EXISTS {
+        {
+            ?y a onto:GroundObject .
+        } UNION {
+            ?y a onto:AirborneObject .
+        }
+    }
+}
