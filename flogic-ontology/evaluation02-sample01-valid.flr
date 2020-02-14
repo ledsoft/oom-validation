@@ -1,0 +1,18 @@
+// Data sample for evaluation02, with data corresponding to ICs
+
+fine:Punishment .
+probation:Punishment .
+imprisonment:Punishment .
+
+oceanic815:AirborneObject .
+pragueAirport:GroundObject .
+
+threat01:BombThreat[
+    against -> oceanic815,
+    hasPunishment -> imprisonment
+].
+
+threat02:BombThreat[
+    against -> pragueAirport,
+    hasPunishment -> probation
+].

@@ -45,9 +45,9 @@
     
 
 
-    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment -->
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/hasPunishment -->
 
-    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/hasPunishment"/>
     
 
 
@@ -227,13 +227,13 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/hasPunishment"/>
                 <owl:someValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/hasPunishment"/>
                 <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -243,7 +243,7 @@
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/hasPunishment"/>
                 <owl:someValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
             </owl:Restriction>
         </owl:annotatedTarget>
@@ -254,7 +254,7 @@
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/has-punishment"/>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/hasPunishment"/>
                 <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-02/Punishment"/>
             </owl:Restriction>
         </owl:annotatedTarget>
