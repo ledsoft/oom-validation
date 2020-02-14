@@ -18,7 +18,6 @@ public class Report implements Serializable {
     @OWLObjectProperty(iri = "ev:author")
     private User author;
 
-    @ParticipationConstraints(nonEmpty = true)
     @OWLObjectProperty(iri = "ev:lastEditor")
     private User lastEditor;
 

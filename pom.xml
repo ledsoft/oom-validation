@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <cz.cvut.kbss.jopa.version>0.13.3</cz.cvut.kbss.jopa.version>
+        <cz.cvut.kbss.jopa.version>0.13.4</cz.cvut.kbss.jopa.version>
         <com.github.galigator.openllet.version>2.6.4</com.github.galigator.openllet.version>
     </properties>
 
@@ -140,12 +140,12 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjtools</artifactId>
-                        <version>1.9.4</version>
+                        <version>1.9.5</version>
                     </dependency>
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjrt</artifactId>
-                        <version>1.9.4</version>
+                        <version>1.9.5</version>
                     </dependency>
                 </dependencies>
                 <executions>
