@@ -14,6 +14,11 @@ Another task is to see how IC validation works. In this scenario, several ABoxes
 to the integrity constraints, some not. Next, IC validation queries would be executed on the OWL 2 and F-logic variants. For both variants,
 the queries should give equivalent results.
 
+## System Requirements
+
+* JDK 8
+* Apache Maven 3.3.1 or newer
+
 ## Project Structure
 
 - `dl-ontology` contains two example OWL 2 ontologies
@@ -34,4 +39,10 @@ The models can be generated using:
 or
 
 `mvn cz.cvut.kbss.jopa:jopa-maven-plugin:owl2java-transform -P evaluation-02`
+
+## Running Example
+
+To run the example application for the first evaluation (evaluation-01), use the following:
+
+`mvn -P evaluation-01 exec:java`
 
