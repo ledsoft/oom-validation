@@ -1,0 +1,14 @@
+// Validation queries for evaluation02 samples
+
+
+// UnlawfulAction
+?- ?X:UnlawfulAction \and \naf(?X[hasPunishment -> ?Y] \and ?Y:Punishment) .
+?- ?X:UnlawfulAction \and ?X[hasPunishment -> ?Y] \and \naf(?Y:Punishment) .
+
+// GroundObject complement of AirborneObject
+?- ?X:GroundObject \and ?X:AirborneObject .
+
+// BombThreat
+?- ?X:BombThreat \and \naf(?X:SecurityEvent \and ?X:UnlawfulAction) .
+?- ?X:BombThreat \and \naf(?X[against -> ?Y] \and ?Y:(GroundObject \or AirborneObject)) .
+?- ?X:BombThreat \and ?X[against -> ?Y] \and \naf(?Y:(GroundObject \or AirborneObject)) .
