@@ -31,7 +31,6 @@ ASK WHERE {
 
 
 #BombThreat
-#TODO This doesn't seem to work
 ASK WHERE {
     ?x a onto:BombThreat .
     FILTER NOT EXISTS {
