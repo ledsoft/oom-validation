@@ -10,5 +10,5 @@
 
 // BombThreat
 ?- ?X:BombThreat \and \naf(?X:SecurityEvent \and ?X:UnlawfulAction) .
-?- ?X:BombThreat \and \naf(?X[against -> ?Y] \and ?Y:(GroundObject \or AirborneObject)) .
-?- ?X:BombThreat \and ?X[against -> ?Y] \and \naf(?Y:(GroundObject \or AirborneObject)) .
+?- ?X:BombThreat \and \naf(?X[against -> ?Y] \and (?Y:GroundObject \or ?Y:AirborneObject)) .
+?- ?X:BombThreat \and ?X[against -> ?Y] \and \naf(?Y:GroundObject \or ?Y:AirborneObject) .

@@ -9,14 +9,14 @@ obj:Thing :- obj:Type .
 // Ontology
 SafetyEvent::Event .
 SecurityEvent::SafetyEvent .
-UnlawfulAction::(SafetyEvent , Action) .
+UnlawfulAction::{SafetyEvent , Action} .
 UnlawfulAction::Some(hasPunishment, Punishment) .
-BombThreat::(SecurityEvent , UnlawfulAction) .
+BombThreat::{SecurityEvent , UnlawfulAction} .
 GroundObject::Not(AirborneObject) .
 BombThreat::Some(against, GroundObject ; AirborneObject) .
 
 //Integrity Constraints
 UnlawfulAction[hasPunishment{1..*} => Punishment] .
-BombThreat[against{1..*} => (GroundObject ; AirborneObject)] .
-BombThreat::(SecurityEvent , UnlawfulAction) .
+BombThreat[against{1..*} => {GroundObject ; AirborneObject}] .
+BombThreat::{SecurityEvent , UnlawfulAction} .
 GroundObject::Not(AirborneObject) .
