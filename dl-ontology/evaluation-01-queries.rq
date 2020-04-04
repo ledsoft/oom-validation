@@ -79,6 +79,14 @@ ASK WHERE {
     }
 }
 
+ASK WHERE {
+    ?x a onto:Report .
+    ?x onto:hasAttachment ?y .
+    FILTER NOT EXISTS {
+        ?y a onto:Resource .
+    }
+}
+
 
 # Occurrence
 ASK WHERE {

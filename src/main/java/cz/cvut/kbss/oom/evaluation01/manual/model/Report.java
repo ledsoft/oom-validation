@@ -3,6 +3,7 @@ package cz.cvut.kbss.oom.evaluation01.manual.model;
 import cz.cvut.kbss.jopa.model.annotations.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @OWLClass(iri = "ev:Report")
 public class Report implements Serializable {
@@ -13,6 +14,9 @@ public class Report implements Serializable {
     @ParticipationConstraints(nonEmpty = true)
     @OWLObjectProperty(iri = "ev:documents")
     private Occurrence documents;
+
+    @OWLObjectProperty(iri = "ev:hasAttachment")
+    private Set<Resource> hasAttachment;
 
     @ParticipationConstraints(nonEmpty = true)
     @OWLObjectProperty(iri = "ev:author")
@@ -35,6 +39,14 @@ public class Report implements Serializable {
 
     public void setDocuments(Occurrence documents) {
         this.documents = documents;
+    }
+
+    public Set<Resource> getHasAttachment() {
+        return hasAttachment;
+    }
+
+    public void setHasAttachment(Set<Resource> hasAttachment) {
+        this.hasAttachment = hasAttachment;
     }
 
     public User getAuthor() {

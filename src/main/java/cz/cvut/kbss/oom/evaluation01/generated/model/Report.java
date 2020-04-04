@@ -45,6 +45,8 @@ public class Report
         @ParticipationConstraint(owlObjectIRI = Vocabulary.s_c_Occurrence, min = 1, max = 1)
     })
     protected Occurrence documents;
+    @OWLObjectProperty(iri = Vocabulary.s_p_hasAttachment)
+    protected Set<Resource> hasAttachment;
     @OWLObjectProperty(iri = Vocabulary.s_p_lastEditor)
     @ParticipationConstraints({
         @ParticipationConstraint(owlObjectIRI = Vocabulary.s_c_User, max = 1)
@@ -110,6 +112,14 @@ public class Report
 
     public Occurrence getDocuments() {
         return documents;
+    }
+
+    public void setHasAttachment(Set<Resource> hasAttachment) {
+        this.hasAttachment = hasAttachment;
+    }
+
+    public Set<Resource> getHasAttachment() {
+        return hasAttachment;
     }
 
     public void setLastEditor(User lastEditor) {

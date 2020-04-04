@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01#"
      xml:base="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01"
-     xmlns:ic="http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ic="http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -19,16 +19,16 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#isIntegrityConstraintFor -->
 
     <owl:AnnotationProperty rdf:about="http://krizik.felk.cvut.cz/ontologies/2009/ic.owl#isIntegrityConstraintFor"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -36,7 +36,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author -->
@@ -44,25 +44,31 @@
     <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author">
         <rdfs:subPropertyOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents -->
 
     <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents"/>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor -->
 
     <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor"/>
+    
 
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasAttachment -->
+
+    <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasAttachment"/>
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasSeverity -->
 
     <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasSeverity"/>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor -->
@@ -70,10 +76,10 @@
     <owl:ObjectProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor">
         <rdfs:subPropertyOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/editor"/>
     </owl:ObjectProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -81,7 +87,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName -->
@@ -89,7 +95,7 @@
     <owl:DatatypeProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName -->
@@ -97,7 +103,7 @@
     <owl:DatatypeProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/username -->
@@ -105,10 +111,10 @@
     <owl:DatatypeProperty rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/username">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -116,7 +122,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Asset -->
@@ -135,7 +141,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence -->
@@ -178,7 +184,7 @@
         </owl:annotatedTarget>
         <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
     </owl:Axiom>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report -->
@@ -199,6 +205,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasAttachment"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor"/>
                 <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
             </owl:Restriction>
@@ -241,6 +253,17 @@
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasAttachment"/>
+                <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Resource"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor"/>
                 <owl:allValuesFrom rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User"/>
             </owl:Restriction>
@@ -294,7 +317,15 @@
         </owl:annotatedTarget>
         <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
     </owl:Axiom>
+    
 
+
+    <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Resource -->
+
+    <owl:Class rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Resource">
+        <rdfs:subClassOf rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Asset"/>
+    </owl:Class>
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity -->
@@ -310,7 +341,7 @@
             </owl:Class>
         </owl:equivalentClass>
     </owl:Class>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User -->
@@ -425,10 +456,10 @@
         </owl:annotatedTarget>
         <ic:isIntegrityConstraintFor>evaluation-01</ic:isIntegrityConstraintFor>
     </owl:Axiom>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -436,7 +467,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/accident -->
@@ -444,7 +475,7 @@
     <owl:NamedIndividual rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/accident">
         <rdf:type rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/incident -->
@@ -452,7 +483,7 @@
     <owl:NamedIndividual rdf:about="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/incident">
         <rdf:type rdf:resource="http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Severity"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/observation -->
@@ -464,5 +495,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 

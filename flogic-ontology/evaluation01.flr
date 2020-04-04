@@ -11,6 +11,7 @@ obj:Thing :- obj:Type .
 Asset::Some(author, Thing) .
 Asset::AtMost(1, author, Thing) .
 Report::Asset .
+Resource::Asset .
 subPropertyOf(author, editor) .
 subPropertyOf(lastEditor, editor) .
 Report::Some(documents, Occurrence) .
@@ -29,7 +30,8 @@ accident:Severity .
 // Integrity constraints
 Report[author{1..1} => User,
         lastEditor{0..1} => User,
-        documents{1..1} => Occurrence] .
+        documents{1..1} => Occurrence,
+        hasAttachment => Resource] .
 Occurrence[hasSeverity{1..1} => Severity] .
 User[firstName{1..1} => _string,
         lastName{1..1} => _string,

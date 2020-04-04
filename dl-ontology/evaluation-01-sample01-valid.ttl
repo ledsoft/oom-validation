@@ -1,59 +1,70 @@
 @prefix : <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid> rdf:type owl:Ontology ;
-                                                                                        owl:imports <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01> .
+<http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid>
+  a owl:Ontology;
+  owl:imports <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01> .
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/occurrence01
 
-#################################################################
-#    Individuals
-#################################################################
+:occurrence01 a <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence>,
+    owl:NamedIndividual;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasSeverity>
+    <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/observation> .
+# 
+# http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/occurrence02
 
+:occurrence02 a <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence>,
+    owl:NamedIndividual;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasSeverity>
+    <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/accident> .
+# 
+# http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/report01
 
-###  http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/occurrence01
-:occurrence01 rdf:type owl:NamedIndividual ,
-                       <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence> ;
-              <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasSeverity> <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/observation> .
+:report01 a <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report>,
+    owl:NamedIndividual;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author> :tom;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents>
+    :occurrence01 .
+# 
+# http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/report02
 
+:report02 a <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report>,
+    owl:NamedIndividual;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author> :tom;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents>
+    :occurrence02;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor>
+    :sarah .
+# 
+# http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/sarah
 
-###  http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/occurrence02
-:occurrence02 rdf:type owl:NamedIndividual ,
-                       <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Occurrence> ;
-              <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/hasSeverity> <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/accident> .
+:sarah a <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User>,
+    owl:NamedIndividual;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName>
+    "Sarah";
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName> "Palmer";
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/username> "palmer@unsc.org" .
+# 
+# http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/tom
 
-
-###  http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/report01
-:report01 rdf:type owl:NamedIndividual ,
-                   <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report> ;
-          <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author> :tom ;
-          <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents> :occurrence01 .
-
-
-###  http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/report02
-:report02 rdf:type owl:NamedIndividual ,
-                   <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/Report> ;
-          <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/author> :tom ;
-          <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/documents> :occurrence02 ;
-          <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastEditor> :sarah .
-
-
-###  http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/sarah
-:sarah rdf:type owl:NamedIndividual ,
-                <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User> ;
-       <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName> "Sarah"^^xsd:string ;
-       <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName> "Palmer"^^xsd:string ;
-       <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/username> "palmer@unsc.org"^^xsd:string .
-
-
-###  http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01-sample01-valid/tom
-:tom rdf:type owl:NamedIndividual ,
-              <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User> ;
-     <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName> "Thomas"^^xsd:string ;
-     <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName> "Lasky"^^xsd:string ;
-     <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/username> "lasky@unsc.org"^^xsd:string .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+:tom a <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/User>,
+    owl:NamedIndividual;
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/firstName>
+    "Thomas";
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/lastName> "Lasky";
+  <http://onto.fel.cvut.cz/ontologies/2020/ml-dissertation/evaluation-01/username> "lasky@unsc.org" .
+# 
+# Generated by the OWL API (version 5.1.13) https://github.com/owlcs/owlapi/

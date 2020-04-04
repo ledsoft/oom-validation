@@ -11,6 +11,8 @@
 ?- ?X:Report \and ?X[documents -> {?Y1, ?Y2}] \and ?Y1:Occurrence \and ?Y2:Occurrence \and \naf(?Y1 :=: ?Y2) .
 ?- ?X:Report \and ?X[documents -> ?Y] \and \naf(?Y:Occurrence) .
 
+?- ?X:Report \and ?X[hasAttachment -> ?Y] \and \naf(?Y:Resource) .
+
 
 // Occurrence
 ?- ?X:Occurrence \and \naf(?X[hasSeverity -> ?Y] \and ?Y:Severity) .
