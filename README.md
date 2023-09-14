@@ -1,6 +1,6 @@
 # OOM Validation
 
-Validation project for the object-ontological mapping (OOM) formalism defined in ML's PhD thesis.
+Validation project for the object-ontological mapping (OOM) formalism defined in [ML's PhD thesis](https://dspace.cvut.cz/handle/10467/91091?locale-attribute=en).
 
 The validation process consists of several phases.
 
